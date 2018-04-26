@@ -8,7 +8,5 @@ public class Main {
 		listNode.addNode(1, 5);
 		
 		System.out.println(listNode.getNode(1).getData());
-		
-		
 	}
 }
