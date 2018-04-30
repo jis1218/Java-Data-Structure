@@ -6,7 +6,7 @@ public class ListQueue<T> {
 	private Node bottom;
 	private int size;
 	
-	ListQueue(){
+	public ListQueue(){
 		this.top = null;
 		this.bottom = null;
 		this.size = 0;
@@ -41,6 +41,10 @@ public class ListQueue<T> {
 	
 	public T getTop(){
 		return top.value;
+	}
+	
+	public boolean isEmpty(){
+		return size==0;
 	}
 	
 	
