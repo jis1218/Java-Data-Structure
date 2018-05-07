@@ -47,5 +47,24 @@ public class BinaryTree<Key extends Comparable<Key>> {
 			}
 		}
 	}
+	
+	// size와 height 모두 재귀함수를 이용한다.
+	public int size(Node n){
+		if(n==null) return 0;
+		else return (1+size(n.getLeftNode())+size(n.getRightNode()));
+	}
+	
+	public int height(Node n){
+		if(n==null) return 0;
+		else return 1+Math.max(height(n.getLeftNode()), height(n.getRightNode()));
+	}
+	
+	public static boolean isEqual(Node n, Node m){
+		if(n==null || m==null) return n==m;
+		
+		if(n.getKey().compareTo(m.getKey())!=0) return false;
+		
+		return (isEqual(n.getLeftNode(), m.getLeftNode()) && isEqual(n.getRightNode(), m.getRightNode()));
+	}
 
 }
