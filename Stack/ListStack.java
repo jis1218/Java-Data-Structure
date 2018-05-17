@@ -10,6 +10,20 @@ public class ListStack<T> {
 		size=0;
 	}
 	
+	class Node{
+		private T value = null;
+		private Node next;
+		Node(T value){
+			this.value = value;
+			this.next = null;
+		}
+		
+		public T getValue(){
+			return value;
+		}
+		
+	}
+	
 	public T getTop(){
 		if(isEmpty()){
 			throw new EmptyStackException();
@@ -46,19 +60,7 @@ public class ListStack<T> {
 		return size;
 	}
 	
-	class Node{
-		private T value = null;
-		private Node next;
-		Node(T value){
-			this.value = value;
-			this.next = null;
-		}
-		
-		public T getValue(){
-			return value;
-		}
-		
-	}
+
 
 	@Override
 	public String toString() {
