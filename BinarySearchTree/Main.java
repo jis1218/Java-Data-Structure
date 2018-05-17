@@ -20,6 +20,9 @@ public class Main {
 		tree.deleteMin();
 		System.out.println("\n");
 		tree.inorder(tree.getRoot());
+		tree.delete(68);
+		System.out.println("\n");
+		tree.inorder(tree.getRoot());
 		
 
 	}

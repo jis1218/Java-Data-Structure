@@ -75,6 +75,35 @@ public class BinarySearchTree {
 		return n;
 	}
 	
+	public void delete(int key){
+		setRoot(delete(getRoot(), key));
+	}
+	
+	public Node delete(Node n, int key){
+		if(n.getKey()==key){
+			if(n.getLeftNode()==null && n.getRightNode()==null) return null;
+			else if(n.getLeftNode()==null) return n.getRightNode();
+			else if(n.getRightNode()==null) return n.getLeftNode();
+			else{
+				Node newNode = minNode(n.getRightNode());
+				newNode.setLeftNode(n.getLeftNode());
+				newNode.setRightNode(deleteMin(n.getRightNode()));
+				return newNode;
+				
+			}
+			
+		}else if(n.getKey()>key){
+			n.setLeftNode(delete(n.getLeftNode(), key));
+		}else{
+			n.setRightNode(delete(n.getRightNode(), key));
+		}
+		
+		return n;
+		
+	}
+	
+	
+	
 	public void preorder(Node n){
 		if(n!=null){
 			System.out.print(n.getKey()+", ");
